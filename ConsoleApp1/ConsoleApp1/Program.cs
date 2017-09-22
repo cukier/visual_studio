@@ -13,14 +13,15 @@ namespace ConsoleApp1
     {
         public static void Main()
         {
-            SerialPort mySerialPort = new SerialPort("COM5");
-
-            mySerialPort.BaudRate = 9600;
-            mySerialPort.Parity = Parity.None;
-            mySerialPort.StopBits = StopBits.One;
-            mySerialPort.DataBits = 8;
-            mySerialPort.Handshake = Handshake.None;
-            mySerialPort.RtsEnable = true;
+            SerialPort mySerialPort = new SerialPort("COM5")
+            {
+                BaudRate = 9600,
+                Parity = Parity.None,
+                StopBits = StopBits.One,
+                DataBits = 8,
+                Handshake = Handshake.None,
+                RtsEnable = true
+            };
 
             mySerialPort.DataReceived += new SerialDataReceivedEventHandler(DataReceivedHandler);
 
